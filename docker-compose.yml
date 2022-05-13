@@ -1,0 +1,14 @@
+version: "3.8"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      # AMQP protocol port
+      - '127.0.0.1:5672:5672'
+      # HTTP management UI
+      - '127.0.0.1:15672:15672'
+    volumes:
+      - "./rabbitmq:/var/lib/rabbitmq"

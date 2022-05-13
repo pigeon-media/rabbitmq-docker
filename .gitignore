@@ -1,0 +1,3 @@
+rabbitmq/
+.env
+.DS_Store
